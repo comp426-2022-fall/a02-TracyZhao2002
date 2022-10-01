@@ -1,0 +1,28 @@
+{
+  "name": "a02-tracyzhao2002",
+  "version": "1.0.0",
+  "description": "to create own galosh",
+  "main": "index.js",
+  "scripts": {
+    "test": "node cli.js -n 35.92 -w 79.05 -z America/New_York"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/comp426-2022-fall/a02-TracyZhao2002.git"
+  },
+  "author": "TongyuZhao",
+  "license": "GPL-3.0-or-later",
+  "bugs": {
+    "url": "https://github.com/comp426-2022-fall/a02-TracyZhao2002/issues"
+  },
+  "bin": {
+    "galosh.js": "./cli.js"
+  },
+  "type": "module",
+  "homepage": "https://github.com/comp426-2022-fall/a02-TracyZhao2002#readme",
+  "dependencies": {
+    "minimist": "^1.2.6",
+    "moment-timezone": "^0.5.37",
+    "node-fetch": "^3.2.10"
+  }
+}
