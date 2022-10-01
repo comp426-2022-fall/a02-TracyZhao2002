@@ -4,7 +4,7 @@ import moment from 'moment-timezone';
 import fetch from 'node-fetch';
 
 const args = minimist(process.argv.slice(2));
-const timezone = moment.tz.guest();
+let timezone = moment.tz.guess();
 
 if (args.h){
   console.log(`
@@ -19,7 +19,7 @@ if (args.h){
 }
 
 // declare latitude
-let latitude = '35.92'
+let latitude = '35'
 if (args.n) {
     latitude = args.n
 }
@@ -28,7 +28,7 @@ if (args.s) {
 }
 
 // declare longitude
-let longitude = '-79.05'
+let longitude = '79'
 if (args.e) {
     longitude = args.e
 }
