@@ -4,7 +4,6 @@ import moment from 'moment-timezone';
 import fetch from 'node-fetch';
 
 const args = minimist(process.argv.slice(2));
-let timezone = moment.tz.guess();
 
 
 if (args.h){
@@ -25,28 +24,15 @@ if (args.h){
   }
 }
 
+
 // declare latitude
-let latitude = '35.875'
-if (args.n) {
-    latitude = args.n
-}
-if (args.s) {
-    latitude = args.s
-}
+const latitude = args.n || args.s * -1;;
 
 // declare longitude
-let longitude = '-79.0'
-if (args.e) {
-    longitude = args.e
-}
-if (args.w) {
-    longitude = args.w
-}
+const longitude = args.e || args.w * -1;
 
 // declare timezone
-if (args.t) {
-  timezone = args.t
-}
+const timezone = args.z ? args.z : moment.tz.guess();
 
 // Make a request
 const response = await fetch('https://api.open-meteo.com/v1/forecast?latitude=' + latitude + '&longitude=' + longitude + '&hourly=temperature_2m&daily=precipitation_hours&current_weather=true&timezone=' + timezone);
